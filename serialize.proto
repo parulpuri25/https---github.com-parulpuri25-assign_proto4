@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+
+message requested_query{
+  string RFW_ID =1;
+  string  benchmarktype = 2;
+  string workloadmetric =3;
+  int32  batchunit =4;
+  int32 batch_id= 5;
+  int32 batch_size =6;
+  string dataset_type=7;
+  string data_analytics=8;
+
+}
+
+message query_response{
+  string RFW_ID = 1;
+  int32 last_batch_ID = 2;
+  repeated batches sample_data =3;
+  float analytics_response=4;
+}
+
+message batches {
+  repeated float requested_samples = 1;
+}
